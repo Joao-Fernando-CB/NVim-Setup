@@ -2,6 +2,7 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=2")
+vim.g.mapleader = " "
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -26,14 +27,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-local plugins = {
-  { "catppuccin/nvim", name= "catppuccin", priority = 1000 }
-}
-local opts = {}
-
 -- Setup lazy.nvim
-require("lazy").setup(plugins, opts)
+require("lazy").setup("plugins")
 
-require("catppuccin").setup()
-vim.cmd.colorscheme "catppuccin"
 
