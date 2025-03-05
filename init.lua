@@ -30,4 +30,4 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup("plugins")
 
-
+vim.api.nvim_set_keymap('n', '<leader>rn', ':set relativenumber!<CR>', { noremap = true, silent = true })

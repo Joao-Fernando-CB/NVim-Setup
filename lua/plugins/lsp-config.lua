@@ -1,4 +1,5 @@
 return {
+  
   {
     "williamboman/mason.nvim",
     config = function()
@@ -16,10 +17,14 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
-      
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local mason_path = vim.fn.stdpath('data') .. '/mason/bin/lua-language-server'
+      local lspconfig = require('lspconfig')
+
       -- Configuração do Lua LSP
       lspconfig.lua_ls.setup({
+        cmd = {mason_path},
+        capabilities = capabilities,
         settings = {
           Lua = {
             runtime = {

@@ -18,6 +18,11 @@ return {
     config = function()
       require("telescope").setup({
         extensions = {
+          pickers = {
+            live_grep = {
+              theme = "dropdown",
+            }
+          },
           ["ui-select"] = {
             require("telescope.themes").get_dropdown ({})
           }
